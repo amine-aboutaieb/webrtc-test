@@ -37,8 +37,8 @@
       let vids = document.getElementById("vids");
       let getUserMedia =
         navigator.mediaDevices.getUserMedia ||
-        navigator.webkitGetUserMedia ||
-        navigator.mozGetUserMedia;
+        navigator.mediaDevices.webkitGetUserMedia ||
+        navigator.mediaDevices.mozGetUserMedia;
       let peer = new Peer();
       peer.on("open", (id) => {
         peerId.innerText = `Your Peer id is ${id}`;
