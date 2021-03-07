@@ -76,6 +76,10 @@
       function addVideo(fStream) {
         let newVid = document.createElement("video");
         newVid.srcObject = fStream;
+        newVid.autoplay = true;
+        newVid.muted = true;
+        newVid.playsInline = true;
+        newVid.controls = true;
         vids.appendChild(newVid);
         newVid
           .play()
