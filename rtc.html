@@ -35,13 +35,13 @@
       let btn = document.getElementById("btn");
       let vid = document.getElementById("vid");
       let vids = document.getElementById("vids");
-      let getUserMedia = navigator.mediaDevices;
       let peer = new Peer();
       peer.on("open", (id) => {
         peerId.innerText = `Your Peer id is ${id}`;
         btn.disabled = false;
       });
-      getUserMedia({ video: true, audio: false })
+      navigator.mediaDevices
+        .getUserMedia({ video: true, audio: false })
         .then((stream) => {
           peer.on("call", (call) => {
             call.answer(stream);
