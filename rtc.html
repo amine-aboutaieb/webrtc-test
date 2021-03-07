@@ -40,7 +40,7 @@
         peerId.innerText = `Your Peer id is ${id}`;
         btn.disabled = false;
       });
-      navigator.mediaDevices
+      navigator
         .getUserMedia({ video: true, audio: false })
         .then((stream) => {
           peer.on("call", (call) => {
