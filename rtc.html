@@ -36,6 +36,7 @@
       let vid = document.getElementById("vid");
       let vids = document.getElementById("vids");
       let peer = new Peer();
+      let OTHERSTREAM = null;
       peer.on("open", (id) => {
         peerId.innerText = `Your Peer id is ${id}`;
         btn.disabled = false;
@@ -58,6 +59,7 @@
                 let call = peer.call(otherUserId.value, stream);
                 call.on("stream", (otherStream) => {
                   console.log(call);
+                  OTHERSTREAM = otherStream;
                   console.log(otherStream);
                   addVideo(otherStream);
                 });
