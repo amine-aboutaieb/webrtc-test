@@ -57,6 +57,8 @@
               btn.onclick = () => {
                 let call = peer.call(otherUserId.value, stream);
                 call.on("stream", (otherStream) => {
+                  console.log(call);
+                  console.log(otherStream);
                   addVideo(otherStream);
                 });
               };
