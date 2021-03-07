@@ -74,21 +74,27 @@
           console.log(error);
         });
       function addVideo(fStream) {
-        let newVid = document.createElement("video");
-        newVid.srcObject = fStream;
-        newVid.autoplay = true;
-        newVid.muted = true;
-        newVid.playsInline = true;
-        newVid.controls = true;
-        vids.appendChild(newVid);
-        newVid
-          .play()
-          .then(() => {
-            console.log("new vid working");
-          })
-          .catch((error) => {
-            console.log(error);
-          });
+        let video = document.createElement("video");
+        // newVid.srcObject = fStream;
+        // newVid.autoplay = true;
+        // newVid.muted = true;
+        // newVid.playsInline = true;
+        // newVid.controls = true;
+        //Set video source
+        video.srcObject = fStream;
+        //Play it
+        video.autoplay = true;
+        video.playsInline = true;
+        video.muted = true;
+        vids.appendChild(video);
+        // newVid
+        //   .play()
+        //   .then(() => {
+        //     console.log("new vid working");
+        //   })
+        //   .catch((error) => {
+        //     console.log(error);
+        //   });
       }
     </script>
   </body>
